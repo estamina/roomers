@@ -1,0 +1,6 @@
+[submodule "src/client"]
+	path = src/client
+	url = https://github.com/estamina/client.git
+[submodule "src/server"]
+	path = src/server
+	url = https://github.com/estamina/server.git
