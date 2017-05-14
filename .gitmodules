@@ -4,3 +4,6 @@
 [submodule "src/server"]
 	path = src/server
 	url = https://github.com/estamina/server.git
+[submodule "src/chat"]
+	path = src/chat
+	url = https://github.com/estamina/chat.git
