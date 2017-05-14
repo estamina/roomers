@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=windows-1250">
+	<title>Technológie Java - cvičenia</title>
+	<link rel=stylesheet type="text/css" href="../style.css"  title="Style">
+</head>
+<body>
+<table cellspacing="2" cellpadding="2" border="0" width="100%">
+<tr>
+    <td>
+		<a href="http://java.sun.com"><img src="../javalogo.gif" border=0 alt="java.sun.com"></a>
+	</td>
+    <td align="center" valign="top">
+    	<!-- Vrchne nadpisy ZACIATOK -->
+		<font class="hornynadpis">Technológie Java<sup>TM</sup> - cvičenia<br></font>
+		<font class="hornynadpiscast">Cvičenie 13</font>
+		<!-- Vrchne nadpisy KONIEC -->
+	</td>
+</tr>
+<tr>
+	<!-- Navigacne menu vlavo ZACIATOK -->
+    <td align="left" valign="top" width=150 class="navmenu">
+	<a href="../index.html" class="navmenuodsad">Obsah</a><br>
+	<table>
+		<tr ><td width="10"><td><a href="../cv1/cv1.html">Cvičenie 1</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv2/cv2.html">Cvičenie 2</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv3/cv3.html">Cvičenie 3</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv4/cv4.html">Cvičenie 4</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv5/cv5.html">Cvičenie 5</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv6/cv6.html">Cvičenie 6</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv7/cv7.html">Cvičenie 7</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv8/cv8.html">Cvičenie 8</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv9/cv9.html">Cvičenie 9</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv10/cv10.html">Cvičenie 10</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv11/cv11.html">Cvičenie 11</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv12/cv12.html">Cvičenie 12</a><br></tr>
+		<tr ><td width="10"><td><a href="../cv13/cv13.html">Cvičenie 13</a><br></tr>
+  	</table>
+	<a href="../organizacia.html">Organizácia</a><br>
+	<a href="../otazky.html">Otázky</a><br>
+	<a href="../kontakt.html">Kontakt</a><br>
+	<a href="../download.html">Download</a><br>
+	<a href="../dokument.html">Dokumentácia</a><br>
+	<a href="../zadania.html">Zadania</a><br>
+	<a href="http://hypernews.tuke.sk/HyperNews/get/FEI/techjava.html" target="_blank"><font color="orange">HyperNews</a></font><br>
+	</td>
+	<!-- Navigacne menu vlavo KONIEC -->
+
+	<td align="left" valign="top">
+	<!-- Text stranky ZACIATOK -->
+
+	<font class="nadpis">Téma</font>
+	<p>
+		<dd><a href="#uvod">Sieťové aplikácie - úvod</a>
+		<dd><a href="#tcp">TCP (Transmission Control Protocol)</a>
+		<dd><a href="#udp">UDP (User Datagram Protocol)</a>
+		<dd><a href="#porty">Porty</a>
+		<dd><a href="#url">URL (Uniform Resource Locator)</a>
+		<dd><a href="#cs">Aplikácie klient-server</a>
+	<p>
+	<a name="uvod"></a>
+	<font class="nadpis">Sieťové aplikácie - úvod</font>
+	<p>
+	Počítače vrámci Internetu komunikujú navzájom protokolom TCP (Transmission Control Protocol) alebo UDP
+	(User Datagram Protocol).
+	Nasledujúci obrázok znázorňuje vrstvy TCP/IP sieťového modelu.
+	<p align="center">
+	<img src="vrstvy.gif">
+	</p>
+	V prípade, že vytvárame program komunikujúci po sieti, pracuje s aplikačnou vrstvou. Napriek tomu sú nutné aj
+	znalosti nižších vrstiev (hlavne transportnej) pretože poskytujú služby vrstvám vyšším.
+
+	<p>
+	<a name="tcp"></a>
+	<font class="nadpis">TCP (Transmission Control Protocol)</font>
+	<p>
+	<b>TCP</b> je spojovo-orientovaný protokol, ktorý zabezpečuje tok informácií medzi koncovými stanicami (počítačmi).
+	Zároveň je overovaná úspešnosť doručenia informácie cieľovej stanici. Taktiež je garantované poradie príjmania dát
+	(Skôr poslané dáta budú skôr doručené).
+
+	<p>
+	<a name="udp"></a>
+	<font class="nadpis">UDP (User Datagram Protocol)</font>
+	<p>
+	<b>UDP</b> je protokol, ktorý slúži na posielanie blokov dát (packetov) bez overenia úspešnosti doručenia. Pri tomto
+	protokole nemusí platiť, že skôr poslané dáta budú aj skôr doručené ako dáta poslané neskôr. Tento protokol je z
+	dôvodov uvedených jednoduchší ako predchádzajúci protokol TCP a tým aj menej zaťažuje prenosové pásmo. Ak sa vám zdá
+	nepoužiteľný z dôvodu možnej nespoľahlivosti nie je to celkom tak. Existuje mnoho aplikácií (hlavne aplikácie reálneho času),
+	ktoré nie sú viazané len na obsah prenosu ale aj čas doručenia. V prípade chyby prenosu nemá zmysel prenos opakovať, pretože
+	údaj už nemusí byť platný. Takýmto príkladom môže byť prenos informácie o čase. <br>
+	V prípade požiadavky spoľahlivého prenosu je nutné použiť protokol <b>TCP</b>, resp. zabezpečiť si spoľahlivosť UDP
+	vlastnou kontrolou prenosu (Čo však mať za následok zložitosť samotnej aplikácie a zvyšuje objem
+	prenášaných dát.).
+
+	<p>
+	<a name="porty"></a>
+	<font class="nadpis">Porty</font>
+	<p>
+	Počítač je vo väčšine prípadov pripojený k počítačovej sieti jediným rozhraním. Po tomto rozhraní putujú informácie, ktoré predstavujú
+	sieťovú komunikáciu. V tom istom čase však môže pracovať so sieťou viacero aplikácií (napr. WWW server, FTP server, SMTP server). V tomto
+	prípade je nutné určiť adresáta (aplikáciu), ktorému patria dáta vrámci jednej koncovej stanice. Práve na toto odlíšenie existujú <b>porty</b>
+	v protokoloch TCP a UDP.
+	<p align="center">
+	<img src="porty.gif">
+	</p>
+
+	<p>
+	V protokoloch UDP a TCP sa <b>porty</b> používajú na mapovanie prichádzajúcich dát na príslušný bežiaci proces na cieľovej stanici.
+
+	<p align="center">
+	<img src="sc.gif">
+	</p>
+
+	<p>
+	Porty sú očíslované od 0 do 65535 - 16 bitové číslo. Porty od 0-1023 sú však pridelené štandardným aplikáciám. Pre vlastnú potrebu sa používajú
+	porty mimo tohto rozsahu. Pridelené porty je možné nájsť v RFC 1700 <a href="http://www.faqs.org/rfcs/rfc1700.html">http://www.faqs.org/rfcs/rfc1700.html</a>.
+	<p>
+	Nasledujúca tabuľka prezentuje niekoľko pridelených čísel portov:
+	<p>
+	<table border=0 cellpadding=2 cellspacing=0>
+		<tr>
+			<td width=50><b>Port<b>
+			<td><b>Popis</b>
+		<tr>
+			<td>7
+			<td>Echo
+		<tr>
+			<td>13
+			<td>Daytime
+		<tr>
+			<td>20
+			<td>File Transfer [Default Data]
+		<tr>
+			<td>21
+			<td>File Transfer [Control]
+		<tr>
+			<td>23
+			<td>Telnet
+		<tr>
+			<td>25
+			<td>Simple Mail Transfer
+		<tr>
+			<td>80
+			<td>World Wide Web HTTP
+	</table>
+
+	<p>
+	<a name="url"></a>
+	<font class="nadpis">URL (Uniform Resource Locator)</font>
+	<p>
+	<b>URL</b> predstavuje adresu zdroja (referenciu) na Internete.<br>
+	URL pozostáva z dvoch základných častí:
+	<ul>
+		<li>identifikátoru protokolu
+		<li>mena zdroja
+	</ul>
+	<p align="center">
+	<img src="url.gif">
+	</p>
+	Meno zdroja môže pozostávať (iba prvá časť je nutná):
+	<ol>
+		<li><b>Meno hostiteľského počítača</b> - meno hostiteľského počítača na ktorom je zdroj umiestnený
+		<li><b>Meno súboru</b> - cesta k súboru so zdrojom
+		<li><b>Číslo portu</b> - port cez, ktorý prebieha komunikácia
+		<li><b>Referencia</b> - referencia na určitú časť vrámci zdroja (súboru)
+	</ol>
+
+	<p>
+	Java poskytuje na tvorbu aplikácií komunikujúcich po sieti balík <code>java.net</code>.
+	Trieda <code>URL</code> popisuje URL. Na získanie častí URL je možné použiť funkcie:
+	<pre>
+	String getProtocol()
+	String getHost()
+	String getPath()
+	String getPort()
+	String getRef()
+	</pre>
+	Java zároveň ponúka jednoduchú možnosť získania špecifikované zdroja - t.j. umožňuje čítať priamo z URL.
+	Použitím funkcie <code>openStream()</code> priamo získame stream na dané URL. S týmto streamom je potom
+	možné pracovať ako so vstupným streamom, viď <a href="../cv7/cv7.html">Cvičenie 7</a>.
+	<p>
+	Zdrojový text príkladu <a href="URLReader.java">URLReader.java</a>.
+	<pre>
+	import java.net.*;
+	import java.io.*;
+
+	public class URLReader {
+		public static final String resource="http://hornad.fei.tuke.sk/kpi/index.html";
+
+	    public static void main(String[] args) throws Exception {
+		URL url = new URL(resource);
+		InputStream in=url.openStream();
+
+	        int c;
+	        while((c=in.read())!=-1){
+	            System.out.print((char)c);
+	        }
+
+		in.close();
+	    }
+	}
+	</pre>
+
+	<p>
+	<a name="cs"></a>
+	<font class="nadpis">Aplikácie klient-server</font>
+	<p>
+	Nasledujúci príklad prezentuje jednoduchú aplikáciu Echo. Po spustení <code>EchoServer</code> čaká
+	server na pripojenie klienta. Klient je implementovaný v súbore <code>EchoClient.java</code>.
+	Po pripojení klient posiela riadky textu na server a ten ich nezmenené posiela naspäť (echo).<br>
+	Zdrojové texty: <a href="EchoClient.java">EchoClient.java</a>, <a href="EchoServerOneClient.java">EchoServerOneClient.java</a><br>
+
+	<p>
+	Vzhľadom na to, že server pracuje len ako jedno vlákno, nemôže súčasne obsluhovať viacero klientov.
+	Vylepšením je server pre ľubovoľný počet súčasne pripojiteľných klientov - implementácia pomocou vlákna pre
+	každého pripojeného klienta <a href="EchoServer.java">EchoServer.java</a>.<br>
+
+	<p>
+	Záverom je prezentovaná aplikácia klient-server - triviálny chatovací program. Pozostáva zo serveru, na ktorý
+	sa pripájajú klienti.<br>
+	Zdrojové texty: <a href="ChatClient.java">ChatClient.java</a>, <a href="ChatServer.java">ChatServer.java</a><br>
+
+	<p align="center">
+	<img src="chat.gif">
+	</p>
+
+	<p>
+	<font class="nadpis">Zhrnutie</font>
+	<p>
+	<ol>
+		<li>Popíšte sieťový model TCP/IP?
+		<li>Charakterizujte protokol TCP?
+		<li>Charakterizujte protokol UDP?
+		<li>Na čo slúžia porty?
+		<li>Čo je to URL?
+	</ol>
+</tr>
+</table>
+
+</body>
+</html>
